@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <script src="mqtt.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historique des Données - Ski'Connect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #ADD8E6;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #333;
+        }
+
+        .hero {
+            background-color: #f1f7fc;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-bottom: 2px solid #ADD8E6;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 1rem;
+        }
+
+        .history-section {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .history-section h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .station-history {
+            margin-bottom: 2rem;
+        }
+
+        .station-name {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #444;
+            margin-bottom: 1rem;
+        }
+
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .history-table th, .history-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .history-table th {
+            background-color: #f1f7fc;
+            color: #333;
+        }
+
+        .alert {
+            background-color: #ffcccc;
+            color: #a94442;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #333;
+            color: white;
+        }
+
+        footer a {
+            color: #FFA500;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Projet_Ski.png" alt="Logo Ski'Connect">
+            Ski'Connect
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="features.html">Fonctionnalités</a></li>
+                <li><a href="live_data.html">Données en Direct</a></li>
+                <li><a href="historique.html">Historique des données</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Historique des Données</h1>
+        <p>Retrouvez ici les données des sept derniers jours pour chaque station.</p>
+    </div>
+
+    <div class="history-section">
+        <h2>Historique des Stations</h2>
+
+        <div class="station-history">
+            <div class="station-name">Station Mont Blanc</div>
+            <table class="history-table">
+                <tr>
+                    <th>Date</th>
+                    <th>Température</th>
+                    <th>Vent</th>
+                    <th>Alerte</th>
+                </tr>
+                <tbody id="mont-blanc-history">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="station-history">
+            <div class="station-name">Station Alpes Sud</div>
+            <table class="history-table">
+                <tr>
+                    <th>Date</th>
+                    <th>Température</th>
+                    <th>Vent</th>
+                    <th>Alerte</th>
+                </tr>
+                <tbody id="alpes-sud-history">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="station-history">
+            <div class="station-name">Station Vosges</div>
+            <table class="history-table">
+                <tr>
+                    <th>Date</th>
+                    <th>Température</th>
+                    <th>Vent</th>
+                    <th>Alerte</th>
+                </tr>
+                <tbody id="vosges-history">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Ski'Connect. Tous droits réservés. <a href="legal.html">Mentions Légales</a> | <a href="contact.html">Contact</a></p>
+    </footer>
+</body>
+
+<script>
+    const historyData = {
+        "Station Mont Blanc": [
+            { date: "2025-01-16", temp: -5, wind: 25, alert: "Non" },
+            { date: "2025-01-15", temp: -3, wind: 20, alert: "Non" },
+            { date: "2025-01-14", temp: -7, wind: 55, alert: "Oui" },
+            { date: "2025-01-13", temp: -8, wind: 60, alert: "Oui" },
+            { date: "2025-01-12", temp: -4, wind: 30, alert: "Non" },
+            { date: "2025-01-11", temp: -6, wind: 50, alert: "Oui" },
+            { date: "2025-01-10", temp: -5, wind: 40, alert: "Non" }
+        ],
+        "Station Alpes Sud": [
+            { date: "2025-01-16", temp: 1, wind: 20, alert: "Non" },
+            { date: "2025-01-15", temp: 2, wind: 15, alert: "Non" },
+            { date: "2025-01-14", temp: 0, wind: 30, alert: "Non" },
+            { date: "2025-01-13", temp: -2, wind: 35, alert: "Non" },
+            { date: "2025-01-12", temp: 1, wind: 25, alert: "Non" },
+            { date: "2025-01-11", temp: -1, wind: 30, alert: "Non" },
+            { date: "2025-01-10", temp: 0, wind: 20, alert: "Non" }
+        ],
+        "Station Vosges": [
+            { date: "2025-01-16", temp: -4, wind: 30, alert: "Non" },
+            { date: "2025-01-15", temp: -3, wind: 40, alert: "Non" },
+            { date: "2025-01-14", temp: -6, wind: 65, alert: "Oui" },
+            { date: "2025-01-13", temp: -5, wind: 45, alert: "Non" },
+            { date: "2025-01-12", temp: -4, wind: 50, alert: "Oui" },
+            { date: "2025-01-11", temp: -3, wind: 60, alert: "Oui" },
+            { date: "2025-01-10", temp: -2, wind: 55, alert: "Oui" }
+        ]
+    };
+
+    function populateHistoryTable(stationName, tableId) {
+        const tbody = document.getElementById(tableId);
+        historyData[stationName].forEach(entry => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${entry.date}</td>
+                <td>${entry.temp}°C</td>
+                <td>${entry.wind} km/h</td>
+                <td class="${entry.alert === "Oui" ? "alert" : ""}">${entry.alert}</td>
+            `;
+            tbody.appendChild(row);
+        });
+    }
+
+    populateHistoryTable("Station Mont Blanc", "mont-blanc-history");
+    populateHistoryTable("Station Alpes Sud", "alpes-sud-history");
+    populateHistoryTable("Station Vosges", "vosges-history");
+</script>
+</html>
