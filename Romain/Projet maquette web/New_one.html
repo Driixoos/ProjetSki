@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paramétrer une Nouvelle Remontée</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #ADD8E6;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .form-container {
+            max-width: 900px; /* Augmente la largeur pour équilibrer */
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        form input, form select, form button {
+            width: calc(100% - 2rem); /* Réduction pour laisser plus d'espace sur les côtés */
+            margin: 0 1rem; /* Ajoute des marges latérales */
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        form button {
+            background-color: #FFA500;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #ff7f00;
+        }
+
+        .pylones-container {
+            margin-top: 1rem;
+        }
+
+        .pylone-group {
+            margin-bottom: 1.5rem;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #333;
+            color: white;
+            margin-top: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        header {
+            background: #ADD8E6;
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Projet_Ski.png" alt="Logo Ski'Connect">
+            Ski'Connect
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="features.html">Fonctionnalités</a></li>
+                <li><a href="live_data.html">Données en Direct</a></li>
+                <li><a href="Historique.html">Historique des données</a></li>
+                <li><a href="New_one.html">Nouvelles remontées</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="form-container">
+        <h1>Paramétrer une Nouvelle Remontée</h1>
+        <form id="remonteeForm">
+            <label for="nomRemontee">Nom de la Remontée</label>
+            <input type="text" id="nomRemontee" name="nomRemontee" required placeholder="Entrez le nom de la remontée">
+
+            <label for="station">Station</label>
+            <input type="text" id="station" name="station" required placeholder="Entrez le nom de la station">
+
+            <label for="nombrePylones">Nombre de Pylônes</label>
+            <input type="number" id="nombrePylones" name="nombrePylones" required min="1" placeholder="Entrez le nombre de pylônes">
+
+            <div class="pylones-container" id="pylonesContainer">
+                <!-- Les champs pour les pylônes seront générés dynamiquement ici -->
+            </div>
+
+            <button type="button" id="generatePylones">Générer les Pylônes</button>
+            <button type="submit">Enregistrer</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Ski'Connect. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        const pylonesContainer = document.getElementById('pylonesContainer');
+        const generatePylonesButton = document.getElementById('generatePylones');
+        const remonteeForm = document.getElementById('remonteeForm');
+
+        generatePylonesButton.addEventListener('click', () => {
+            const nombrePylones = parseInt(document.getElementById('nombrePylones').value);
+
+            if (isNaN(nombrePylones) || nombrePylones < 1) {
+                alert('Veuillez entrer un nombre valide de pylônes.');
+                return;
+            }
+
+            pylonesContainer.innerHTML = ''; // Réinitialiser le conteneur
+
+            for (let i = 1; i <= nombrePylones; i++) {
+                const pyloneGroup = document.createElement('div');
+                pyloneGroup.classList.add('pylone-group');
+
+                pyloneGroup.innerHTML = `
+                    <h3>Pylône ${i}</h3>
+                    <label for="latitude${i}">Latitude</label>
+                    <input type="text" id="latitude${i}" name="latitude${i}" required placeholder="Entrez la latitude du pylône ${i}">
+                    
+                    <label for="longitude${i}">Longitude</label>
+                    <input type="text" id="longitude${i}" name="longitude${i}" required placeholder="Entrez la longitude du pylône ${i}">
+                `;
+
+                pylonesContainer.appendChild(pyloneGroup);
+            }
+        });
+
+        remonteeForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const formData = new FormData(remonteeForm);
+
+            console.log('Nouvelle remontée paramétrée :');
+            for (let [key, value] of formData.entries()) {
+                console.log(`${key}: ${value}`);
+            }
+
+            alert('Nouvelle remontée enregistrée avec succès !');
+        });
+    </script>
+</body>
+</html>
