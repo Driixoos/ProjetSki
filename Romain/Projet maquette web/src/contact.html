@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Ski'Connect</title>
+    <link rel="stylesheet" href="../styles/contactStyles.css">
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div class="logo">
+                <img src="../img/Projet_Ski.png" alt="Logo Ski'Connect">
+                Ski'Connect
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="features.html">Fonctionnalités</a></li>
+                    <li><a href="live_data.html">Données en Direct</a></li>
+                    <li><a href="Historique.html">Historique des données</a></li>
+                    <li><a href="New_one.html">Nouvelles remontées</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="hero">
+            <h1>Contactez-Nous</h1>
+            <p>Nous sommes là pour répondre à vos questions.</p>
+        </div>
+
+        <div class="contact-members">
+            <div class="contact-member">
+                <h3>Fondateur</h3>
+                <p>Email : romain.bartholme@cdfnancy.fr</p>
+                <p>Téléphone : 06 16 83 51 70</p>
+                <p>Position : Nancy</p>
+            </div>
+            <div class="contact-member">
+                <h3>Fondateur</h3>
+                <p>Email : victor.dreyer@cdfnancy.fr</p>
+                <p>Téléphone : 07 78 17 49 58</p>
+                <p>Position : Nancy</p>
+            </div>
+            <div class="contact-member">
+                <h3>Fondateur</h3>
+                <p>Email : loic.tredet@cdfnancy.fr</p>
+                <p>Téléphone : 06 42 79 40 27</p>
+                <p>Position : Nancy</p>
+            </div>
+            <div class="contact-member">
+                <h3>Fondateur</h3>
+                <p>Email : thomas.mengozzi@cdfnancy.fr</p>
+                <p>Téléphone : 06 06 48 10 06</p>
+                <p>Position : Nancy</p>
+            </div>
+        </div>
+
+        <section class="contact-form">
+            <h2>Posez votre question</h2>
+            <form id="contactForm">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Votre email">
+
+                <label for="question">Votre question</label>
+                <textarea id="question" name="question" rows="4" required placeholder="Écrivez votre question ici..."></textarea>
+
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </div> <!-- Fin du #wrapper -->
+
+    <footer>
+        <p>&copy; 2025 Ski'Connect. Tous droits réservés. 
+            <a href="legal.html">Mentions Légales</a> | <a href="contact.html">Contact</a>
+        </p>
+    </footer>
+
+    <!-- Appel du script JS externe -->
+    <script src="../js/contact_form.js"></script>
+</body>
+</html>

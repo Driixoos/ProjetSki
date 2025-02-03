@@ -1,0 +1,132 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    flex-direction: column;
+}
+
+#wrapper {
+    flex: 1;
+}
+
+header {
+    background-color: #ADD8E6;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #333;
+}
+
+.hero {
+    background-color: #f1f7fc;
+    text-align: center;
+    padding: 4rem 2rem;
+    border-bottom: 2px solid #ADD8E6;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 1rem;
+}
+
+.intro-text {
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: justify;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #444;
+    padding: 0 1rem;
+}
+
+.data-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.data-section h2 {
+    color: #333;
+}
+
+.station {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.station:last-child {
+    border-bottom: none;
+}
+
+.station a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.station a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    color: white;
+    margin-top: auto;
+}
+
+footer a {
+    color: #FFA500;
+    text-decoration: none;
+}

@@ -1,0 +1,45 @@
+header {
+    background: #ADD8E6;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header .logo img {
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+footer {
+      text-align: center;
+      padding: 1rem;
+      background: #333;
+      color: white;
+  }
+
+  footer a {
+      color: #FFA500;
+      text-decoration: none;
+  }
