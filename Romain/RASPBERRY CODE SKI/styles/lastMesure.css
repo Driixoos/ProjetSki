@@ -1,0 +1,342 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;a/* Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    /* Global */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    
+    /* Header */
+    header {
+        background-color: #3498db;
+        color: white;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    
+    .logo img {
+        height: 50px;
+        margin-right: 10px;
+    }
+    
+    /* Navigation */
+    nav ul {
+        list-style: none;
+        display: flex;
+    }
+    
+    nav ul li {
+        margin-left: 20px;
+    }
+    
+    nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    
+    nav ul li a:hover {
+        color: #f1c40f;
+    }
+    
+    /* Section Hero */
+    .hero {
+        background-color: #ecf0f1;
+        text-align: center;
+        padding: 2rem;
+        border-bottom: 2px solid #3498db;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+        color: #333;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+        color: #666;
+        margin-top: 0.5rem;
+    }
+    
+    /* Conteneur des sections */
+    .container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    /* Sections */
+    .data-section {
+        width: 400px;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    
+    .data-section h2 {
+        color: #333;
+        margin-bottom: 15px;
+    }
+    
+    /* Formulaires */
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;  /* Espacement plus grand entre les champs */
+    }
+    
+    label {
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 5px; /* Espacement entre le label et le champ */
+    }
+    
+    input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+    
+    /* Bouton Ajouter */
+    button.add {
+        background: linear-gradient(135deg, #3498db, #2980b9);
+        color: white;
+        border: 2px solid #2980b9;
+        padding: 12px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 6px;
+        font-weight: bold;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;
+    }
+    
+    button.add:hover {
+        background: linear-gradient(135deg, #2980b9, #1c6ea4);
+        transform: scale(1.05);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    button.add:active {
+        transform: scale(0.95);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    button.save {
+        background: linear-gradient(135deg, #27ae60, #2ecc71);
+        color: white;
+        border: 2px solid #2ecc71;
+        padding: 12px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 6px;
+        font-weight: bold;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;
+    }
+    
+    button.save:hover {
+        background: linear-gradient(135deg, #2ecc71, #27ae60);
+        transform: scale(1.05);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    button.save:active {
+        transform: scale(0.95);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: #3498db;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f1c40f;
+}
+
+/* Section Hero */
+.hero {
+    background-color: #ecf0f1;
+    text-align: center;
+    padding: 2rem;
+    border-bottom: 2px solid #3498db;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* Conteneur des sections */
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Sections */
+.data-section {
+    width: 400px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.data-section h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Formulaires */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;  /* Espacement plus grand entre les champs */
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px; /* Espacement entre le label et le champ */
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Bouton Ajouter */
+button.add {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: 2px solid #2980b9;
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+button.add:hover {
+    background: linear-gradient(135deg, #2980b9, #1c6ea4);
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+button.add:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button.save {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    color: white;
+    border: 2px solid #2ecc71;
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+button.save:hover {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+button.save:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

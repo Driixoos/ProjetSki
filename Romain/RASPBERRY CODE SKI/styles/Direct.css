@@ -1,0 +1,126 @@
+/* Structure générale */
+body {
+    background-color: #f9f9f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+/* Formulaire de sélection */
+form {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+select {
+    font-size: 1.05rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    min-width: 250px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+select:focus {
+    border-color: #2980b9;
+    outline: none;
+}
+
+/* Résultat */
+#resultats {
+    margin-top: 20px;
+}
+
+#resultats p {
+    font-style: italic;
+    color: #666;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1rem;
+}
+
+/* Tableau des données */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #3498db;
+    color: white;
+}
+
+th, td {
+    padding: 14px 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f6fc;
+}
+
+tbody tr:hover {
+    background-color: #eaf1fb;
+}
+
+/* Colonne alerte vent fort */
+.alert {
+    background-color: #e74c3c;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 15px;
+        background-color: #fff;
+        border-radius: 6px;
+        padding: 12px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    td {
+        text-align: left;
+        padding: 10px;
+        position: relative;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+    }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil - Ski Station</title>
+    <link rel="stylesheet" href="styles/lastMesure.css?v=<?php echo time(); ?>">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+            Ski Station
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="lastMesurePyloneAlerte.php">Dernière mesure</a></li>
+                <li><a href="AjoutRemontee.php">Nouvelles Remontées</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Bienvenue sur l'interface de gestion de la station de ski</h1>
+        <p>Visualisez les données des pylônes, ajoutez de nouvelles remontées et surveillez les alertes météo.</p>
+    </section>
+
+    <main class="container">
+        <div class="data-section">
+            <h2>Dernières mesures</h2>
+            <p>Consultez en temps réel les dernières mesures météo pour chaque pylône.</p>
+            <a href="lastMesurePyloneAlerte.php">
+                <button class="add">Voir les mesures</button>
+            </a>
+        </div>
+
+        <div class="data-section">
+            <h2>Ajouter une remontée</h2>
+            <p>Ajoutez une nouvelle remontée mécanique et ses pylônes associés.</p>
+            <a href="AjoutRemontee.php">
+                <button class="save">Nouvelle remontée</button>
+            </a>
+        </div>
+    </main>
+</body>
+</html>
